@@ -1,1 +1,36 @@
-
+import java.util.Scanner;
+class TRANSPUESTA {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n, m;
+        
+        System.out.print("Ingrese el numero de filas: ");
+        n = scanner.nextInt();
+        System.out.print("Ingrese el numero de columnas: ");
+        m = scanner.nextInt();
+        
+        int[][] matriz = new int[n][m];
+        int[][] transpuesta = new int[m][n];
+        
+        System.out.println("\nIngrese los datos de la matriz:");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                System.out.print("Matriz[" + i + "][" + j + "]: ");
+                matriz[i][j] = scanner.nextInt();
+            }
+        }
+        
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                transpuesta[j][i] = matriz[i][j];
+            }
+        }
+        System.out.println("\nMatriz Transpuesta resultante: ");
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(transpuesta[i][j] + "\t");
+            }
+            System.out.println();
+        }
+    }
+}
