@@ -1,1 +1,56 @@
-
+import java.util.Scanner;
+class MaxMin {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n;
+        int m;
+        
+        System.out.print("Ingrese el numero de filas: ");
+        n = scanner.nextInt();
+        System.out.print("Ingrese el numero de columnas: ");
+        m = scanner.nextInt();
+        
+        int[][] matriz = new int[n][m];
+        System.out.println();
+        
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                System.out.print("Ingrese el numero en la posicion [" + i + "][" + j + "]: ");
+                matriz[i][j] = scanner.nextInt();
+            }
+        }
+        
+        int max = matriz[0][0];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (matriz[i][j] > max) {
+                    max = matriz[i][j];
+                }
+            }
+        }
+        
+        int minimo = matriz[0][0];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (matriz[i][j] < minimo) {
+                    minimo = matriz[i][j];
+                }
+            }
+        }
+        
+        System.out.println("\nSu matriz es: ");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                System.out.print(matriz[i][j] + "\t");
+            }
+            System.out.println();
+        }
+        System.out.println();
+        
+        System.out.print("El minimo elemento de la matriz es: ");
+        System.out.print(minimo);
+        
+        System.out.print("\nEl maximo elemento de la matriz es: ");
+        System.out.print(max);
+    }
+}
