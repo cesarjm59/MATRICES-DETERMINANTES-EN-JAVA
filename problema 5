@@ -1,1 +1,39 @@
-
+import java.util.Scanner;
+class SUMA {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n;
+        double suma;
+        
+        System.out.print("Ingrese el tamano de su vector: ");
+        n = scanner.nextInt();
+        
+        double[] a = new double[n];
+        double[] b = new double[n];
+        
+        System.out.print("\nIngrese el numero real que se va a sumar a cada componente: ");
+        suma = scanner.nextDouble();
+        System.out.println();
+        
+        for (int i = 0; i < n; i++) {
+            System.out.print("Ingrese el valor real para la posicion [" + i + "] : ");
+            a[i] = scanner.nextDouble();
+        }
+        
+        for (int i = 0; i < n; i++) {
+            b[i] = a[i] + suma;
+        }
+        
+        System.out.print("\nSu vector original es: ");
+        for (double elemento : a) {
+            System.out.print(elemento + " ");
+        }
+        System.out.println();
+        
+        System.out.print("El vector resultante con la suma es: ");
+        for (double elementos2 : b) {
+            System.out.print(elementos2 + " ");
+        }
+        System.out.println();
+    }
+}
