@@ -1,1 +1,31 @@
-
+import java.util.Scanner;
+class ESCALAR {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int suma = 0;
+        int n;
+        
+        System.out.print("Ingresa el tamaño 'n' de los vectores: ");
+        n = scanner.nextInt();
+        
+        int[] V = new int[n];
+        int[] W = new int[n];
+        
+        System.out.println("\nIngrese los datos para el Vector V");
+        for (int i = 0; i < n; i++) {
+            System.out.print("V[" + i + "]: ");
+            V[i] = scanner.nextInt();
+        }
+        
+        System.out.println("\nIngreso de datos para el Vector W");
+        for (int i = 0; i < n; i++) {
+            System.out.print("W[" + i + "]: ");
+            W[i] = scanner.nextInt();
+        }
+        
+        for (int i = 0; i < n; i++) {
+            suma += V[i] * W[i];
+        }
+        System.out.println("El producto escalar de V y W es: " + suma);
+    }
+}
