@@ -1,1 +1,49 @@
+import java.util.Scanner;
+import java.util.ArrayList; 
+class BordesMatriz {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int m, n;
 
+        System.out.print("Filas: ");
+        m = scanner.nextInt();
+        System.out.print("Columnas: ");
+        n = scanner.nextInt();
+
+        int[][] matriz = new int[m][n];
+
+        System.out.println("Ingrese los elementos:");
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                matriz[i][j] = scanner.nextInt();
+            }
+        }
+
+        ArrayList<Integer> v = new ArrayList<>();
+
+        for (int j = 0; j < n; j++) {
+            v.add(matriz[0][j]); 
+        }
+
+        for (int i = 1; i < m; i++) {
+            v.add(matriz[i][n - 1]);
+        }
+
+        if (m > 1) {
+            for (int j = n - 2; j >= 0; j--) {
+                v.add(matriz[m - 1][j]);
+            }
+        }
+
+        if (n > 1) {
+            for (int i = m - 2; i > 0; i--) {
+                v.add(matriz[i][0]);
+            }
+        }
+        System.out.println("Vector de bordes:");
+        for (int x : v) {
+            System.out.print(x + " ");
+        }
+        System.out.println();
+    }
+}
