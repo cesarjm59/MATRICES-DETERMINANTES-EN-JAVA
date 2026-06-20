@@ -1,1 +1,32 @@
-
+import java.util.Scanner;
+class SUMACUADRADO {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int cantidad;
+        int suma = 0;
+        double cuadrado;
+        
+        System.out.println("Cuantos numeros vas a querer en tu vector?");
+        cantidad = scanner.nextInt();
+        
+        int[] a = new int[cantidad];
+        System.out.println();
+        
+        for (int i = 0; i < cantidad; i++) {
+            System.out.print("Ingrese el numero para la posición [" + i + "]: ");
+            a[i] = scanner.nextInt();
+            suma += a[i];
+        }
+        System.out.println();
+        
+        System.out.println("Su vector es: ");
+        for (int elementos : a) {
+            System.out.println(elementos + " ");
+        }
+        System.out.println();
+        
+        System.out.println("La suma al cuadrado de los elementos del vector, es: ");
+        cuadrado = Math.sqrt(suma);
+        System.out.print(cuadrado);
+    }
+}
