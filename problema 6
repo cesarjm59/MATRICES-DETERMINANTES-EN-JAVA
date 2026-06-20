@@ -1,1 +1,32 @@
-
+import java.util.Scanner;
+class MINIMO {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n;
+        
+        System.out.print("Ingrese el tamano de su vector: ");
+        n = scanner.nextInt();
+        
+        int[] a = new int[n];
+        for (int i = 0; i < n; i++) {
+            System.out.print("Ingrese el valor real para la posicion [" + i + "] : ");
+            a[i] = scanner.nextInt();
+        }
+        
+        int minimo = a[0];
+        for (int i = 0; i < n; i++) {
+            if (a[i] < minimo) {
+                minimo = a[i];
+            }
+        }
+        
+        System.out.print("\nSu vector es: ");
+        for (int elemento : a) {
+            System.out.print(elemento + " ");
+        }
+        System.out.println();
+        
+        System.out.print("\nEl minimo valor de su vector es: ");
+        System.out.print(minimo);
+    }
+}
