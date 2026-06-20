@@ -1,1 +1,37 @@
-
+import java.util.Scanner;
+class PRODUCTOESCALAR {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n;
+        int producto;
+        
+        System.out.print("Ingrese el tamañano de su vector: ");
+        n = scanner.nextInt();
+        
+        int[] a = new int[n];
+        int[] b = new int[n];
+        
+        System.out.println("\nAhora ingrese el numero por el que se va a multiplicar cada elemnto de su vector: ");
+        producto = scanner.nextInt();
+        System.out.println();
+        
+        for (int i = 0; i < n; i++) {
+            System.out.print("Ingrese el vector de la posición [" + i + "] : ");
+            a[i] = scanner.nextInt();
+        }
+        
+        for (int i = 0; i < n; i++) {
+            b[i] = a[i] * producto;
+        }
+        
+        System.out.print("\nSu vector es: ");
+        for (int elemento : a) {
+            System.out.print(elemento + " ");
+        }
+        
+        System.out.print("\nEL nuevo vector multiplicado es: ");
+        for (int elementos2 : b) {
+            System.out.print(elementos2 + " ");
+        }
+    }
+}
