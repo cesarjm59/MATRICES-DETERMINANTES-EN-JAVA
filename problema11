@@ -1,1 +1,29 @@
+import java.util.Scanner;
+class DiagonalPrincipalMatriz {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int m, n;
 
+        System.out.print("Filas: ");
+        m = scanner.nextInt();
+        System.out.print("Columnas: ");
+        n = scanner.nextInt();
+
+        int[][] matriz = new int[m][n];
+
+        System.out.println("Ingrese los elementos:");
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                matriz[i][j] = scanner.nextInt();
+            }
+        }
+        int suma = 0;
+        int limite = (m < n) ? m : n;
+
+        for (int i = 0; i < limite; i++) {
+            suma += matriz[i][i];
+        }
+
+        System.out.println("Suma diagonal principal = " + suma);
+    }
+}
